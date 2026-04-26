@@ -80,12 +80,45 @@ display:inline-block;
 margin-top:10px;
 }
 
-/* GALERIA */
+/* GALERÍA MINIATURAS */
+.galeria{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
 .galeria img{
-width:200px;
-margin:10px;
+width:120px;
+height:120px;
+object-fit:cover;
 border-radius:10px;
-pointer-events:none;
+cursor:pointer;
+transition:0.3s;
+}
+
+.galeria img:hover{
+transform:scale(1.05);
+}
+
+/* VISOR GRANDE */
+#visor{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+#visor img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
 }
 
 /* VIDEO */
@@ -265,10 +298,19 @@ Ing. Mariana Sánchez
     </li>
 </ul>
   
-<h3>📸 Galería (solo visualización)</h3>
+<h3>📸 Galería</h3>
+
 <div class="galeria">
-<img src="foto1.jpg">
-<img src="foto2.jpg">
+
+<img src="foto1.jpg" onclick="abrirImagen(this.src)">
+<img src="foto2.jpg" onclick="abrirImagen(this.src)">
+<img src="foto3.jpg" onclick="abrirImagen(this.src)">
+
+</div>
+
+<!-- VISOR DE IMAGEN -->
+<div id="visor" onclick="cerrarImagen()">
+<img id="imgGrande">
 </div>
 
 </section>
