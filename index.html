@@ -147,14 +147,28 @@ border-radius:10px;
 text-align:center;
 }
 
-.mapa-container img{
-width:65%;
-max-width:480px;
-margin:20px auto;
-display:block;
-border-radius:12px;
-box-shadow:0 6px 15px rgba(0,0,0,0.25);
-pointer-events:none;
+.galeria-mapas{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.mapa-item{
+text-align:center;
+}
+
+.mapa-item img{
+width:220px;
+max-width:90%;
+border-radius:10px;
+cursor:pointer;
+box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+
+.mapa-item p{
+margin-top:5px;
+font-weight:bold;
 }
   
 /* ORGANIGRAMA */
@@ -275,18 +289,41 @@ Ing. Mariana Sánchez
 
 </section>
 
-  <section id="mapa">
+<section id="mapas">
 
-<h2>Mapa del Fraccionamiento</h2>
+<h2>🗺️ Mapa del Fraccionamiento por Secciones</h2>
 
-<p>Consulta el mapa dividido por secciones para ubicar tu zona.</p>
+<p>Da clic en cada sección para ver el mapa en tamaño completo y poder identificar calles y ubicación.</p>
 
-<div class="mapa-container">
+<div class="galeria-mapas">
 
-<img src="mapa.png">
+<!-- SECCIÓN 1 -->
+<div class="mapa-item">
+<img src="seccion1.jpg" onclick="abrirImagen(this.src)">
+<p>📍 Sección 1</p>
+</div>
+
+<!-- SECCIÓN 2 -->
+<div class="mapa-item">
+<img src="seccion2.jpg" onclick="abrirImagen(this.src)">
+<p>📍 Sección 2</p>
+</div>
+
+<!-- SECCIÓN 3 -->
+<div class="mapa-item">
+<img src="seccion3.jpg" onclick="abrirImagen(this.src)">
+<p>📍 Sección 3</p>
+</div>
+
+<!-- SECCIÓN 4 -->
+<div class="mapa-item">
+<img src="seccion4.jpg" onclick="abrirImagen(this.src)">
+<p>📍 Sección 4</p>
+</div>
 
 </div>
 
+</section>
 </section>
 <section id="contacto">
 <h2>Contacto</h2>
